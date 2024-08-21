@@ -32,7 +32,7 @@ parser = argparse.ArgumentParser(description="Run pose estimation DNN on a video
                                  formatter_class=argparse.RawTextHelpFormatter, 
                                  epilog=poseNet.Usage() + videoSource.Usage() + videoOutput.Usage() + Log.Usage())
 
-parser.add_argument("input", type=str, default="", nargs='?', help="URI of the input stream")
+parser.add_argument("input", type=str, default="/dev/video0", nargs='?', help="URI of the input stream")
 parser.add_argument("output", type=str, default="", nargs='?', help="URI of the output stream")
 parser.add_argument("--network", type=str, default="resnet18-body", help="pre-trained model to load (see below for options)")
 parser.add_argument("--overlay", type=str, default="links,keypoints", help="pose overlay flags (e.g. --overlay=links,keypoints)\nvalid combinations are:  'links', 'keypoints', 'boxes', 'none'")

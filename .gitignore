@@ -1,3 +1,5 @@
+utils/*
+utils
 build/
 data/networks/
 data/images/test

@@ -423,6 +423,18 @@
     },
     
     "pose": {
+        "custom": {
+            "alias": [
+                "custom"
+            ],
+            "url": "",
+            "tar": "",
+            "dir": "../../../model_weights/trt_pose/inference",
+            "model": "custom_model.onnx",
+            "topology": "human_pose.json",
+            "colors": "colors.txt",
+            "description": "ResNet18-based human body model with PAF attention"
+        },
         "resnet18-body": {
             "alias": ["resnet18_body"],
             "url": "https://nvidia.box.com/shared/static/waf8bsu58v9qh9qj3sp3wsw1nyj61xm5.gz",
