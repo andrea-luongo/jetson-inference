@@ -806,8 +806,6 @@ static int PyPoseNet_Init(PyPoseNet_Object *self, PyObject *args, PyObject *kwds
 	if (!PyArg_ParseTupleAndKeywords(args, kwds, "|sOf", kwlist, &network, &argList, &threshold))
 		return -1;
 
-	LogInfo(LOG_TRT "Using network: %s\n", network);
-	LogInfo(LOG_TRT "ArgList size %i\n", PyList_Size(argList));
 	// determine whether to use argv or built-in network
 	if (argList != NULL && PyList_Check(argList) && PyList_Size(argList) > 0)
 	{
@@ -841,8 +839,6 @@ static int PyPoseNet_Init(PyPoseNet_Object *self, PyObject *args, PyObject *kwds
 			}
 
 			LogDebug(LOG_PY_INFERENCE "poseNet.__init__() argv[%zu] = '%s'\n", n, argv[n]);
-			LogInfo(LOG_TRT "yoooo I am here  %s\n", argv[n]);
-			LogInfo(LOG_TRT "yuuuu I am here  %i\n", argc);
 		}
 
 		// load the network using (argc, argv)
@@ -858,7 +854,6 @@ static int PyPoseNet_Init(PyPoseNet_Object *self, PyObject *args, PyObject *kwds
 	}
 	else
 	{
-		LogInfo(LOG_TRT "culoneeeeeeeeee I am here  %s\n", network);
 		Py_BEGIN_ALLOW_THREADS
 			self->net = poseNet::Create(network, threshold);
 		Py_END_ALLOW_THREADS
